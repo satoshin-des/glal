@@ -14,11 +14,11 @@ type Vector struct {
 
 // Prints Vector
 func Print(vec Vector) {
-	fmt.Printf("%g", vec.at[0])
+	fmt.Printf("[%g", vec.at[0])
 	for i := 1; i < vec.length; i++ {
 		fmt.Printf(", %g", vec.at[i])
 	}
-	fmt.Printf("\n")
+	fmt.Printf("]\n")
 }
 
 // Makes vector whose size is n
