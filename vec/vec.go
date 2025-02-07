@@ -1,4 +1,4 @@
-package glal
+package vec
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ type Vector struct {
 }
 
 // Prints Vector
-func PrintVec(vec Vector) {
+func Print(vec Vector) {
 	fmt.Printf("%g", vec.at[0])
 	for i := 1; i < vec.length; i++ {
 		fmt.Printf(", %g", vec.at[i])
@@ -52,7 +52,7 @@ func SetRandom(vec Vector) {
 	}
 }
 
-func VecAdd(vec1 Vector, vec2 Vector) Vector {
+func Add(vec1 Vector, vec2 Vector) Vector {
 	if vec1.length != vec2.length {
 		panic("sum of two different size vector is not defined")
 	}
@@ -66,7 +66,7 @@ func VecAdd(vec1 Vector, vec2 Vector) Vector {
 	return vec
 }
 
-func VecSub(vec1 Vector, vec2 Vector) Vector {
+func Sub(vec1 Vector, vec2 Vector) Vector {
 	if vec1.length != vec2.length {
 		panic("difference of two different size vector is not defined")
 	}
@@ -80,7 +80,7 @@ func VecSub(vec1 Vector, vec2 Vector) Vector {
 	return vec
 }
 
-func VecScalarMul(x float64, vec Vector) Vector {
+func ScalarMul(x float64, vec Vector) Vector {
 	v := SetLength(vec.length)
 
 	for i := 0; i < vec.length; i++ {
