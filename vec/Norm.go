@@ -10,5 +10,5 @@ func Norm(vec Vector, p int) float64 {
 		s += vec.at[i] * vec.at[i]
 	}
 
-	return math.Pow(s, 1/float64(p))
+	return math.Pow(s, 1.0/float64(p))
 }
