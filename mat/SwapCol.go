@@ -1,6 +1,6 @@
 package mat
 
-// swap i-th row and j-th row of mat
+// swap i-th column and j-th column of mat
 //
 // panic if i or j are out of range
 func SwapCol(mat Matrix, i int, j int) {
