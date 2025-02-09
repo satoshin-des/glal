@@ -2,20 +2,22 @@ package mat
 
 // Det returns deteminant of mat
 func GaussElimi(mat Matrix) Matrix {
-	copyMat := SetDims(mat.nrows, mat.ncols)
+	elimiMat := CopyMat(mat)
+	copyMat := CopyMat(mat)
+
 	index := -1
 	var temp float64
 
 	var min int = 0
-	if mat.nrows < mat.ncols {
-		min = mat.nrows
+	if copyMat.nrows < copyMat.ncols {
+		min = copyMat.nrows
 	} else {
-		min = mat.ncols
+		min = copyMat.ncols
 	}
 
 	for k := 0; k < min; k++ {
-		for i := k; i < mat.nrows; i++ {
-			if mat.at[i][k] != 0 {
+		for i := k; i < copyMat.nrows; i++ {
+			if copyMat.at[i][k] != 0 {
 				index = i
 				break
 			}
@@ -24,25 +26,25 @@ func GaussElimi(mat Matrix) Matrix {
 		if index == -1 {
 			continue
 		} else if index != k {
-			SwapRow(mat, k, index)
+			SwapRow(copyMat, k, index)
 		}
 
-		for i := 0; i < mat.nrows; i++ {
-			for j := k; j < mat.ncols; j++ {
+		for i := 0; i < copyMat.nrows; i++ {
+			for j := 0; j < copyMat.ncols; j++ {
 				if i == k {
-					copyMat.at[i][j] = mat.at[i][j]
+					elimiMat.at[i][j] = copyMat.at[i][j]
 				} else {
-					copyMat.at[i][j] = mat.at[i][j] - mat.at[k][j]*mat.at[i][k]/mat.at[k][k]
+					elimiMat.at[i][j] = copyMat.at[i][j] - copyMat.at[k][j]*copyMat.at[i][k]/copyMat.at[k][k]
 				}
 			}
 		}
 
-		temp = copyMat.at[k][k]
+		temp = elimiMat.at[k][k]
 
-		for i := 0; i < mat.ncols; i++ {
-			copyMat.at[k][i] /= temp
+		for i := 0; i < copyMat.ncols; i++ {
+			elimiMat.at[k][i] /= temp
 		}
 	}
 
-	return copyMat
+	return elimiMat
 }
