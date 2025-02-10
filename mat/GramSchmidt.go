@@ -1,5 +1,6 @@
 package mat
 
+// GramSchmidt returns matrix whose column vectors are Gram-Schmidt orthogonalized vectors of columns of mat
 func GramSchmidt(mat Matrix) Matrix {
 	gsoMat := SetDims(mat.NumRows, mat.NumCols)
 	mu := Identity(mat.NumCols)
@@ -15,8 +16,9 @@ func GramSchmidt(mat Matrix) Matrix {
 
 		for j := 0; j < i; j++ {
 			dotTemp = 0
+			normTemp = 0
 			for k := 0; k < mat.NumRows; k++ {
-				dotTemp += mat.At[k][i] * mat.At[k][j]
+				dotTemp += mat.At[k][i] * gsoMat.At[k][j]
 				normTemp += gsoMat.At[k][j] * gsoMat.At[k][j]
 			}
 
@@ -27,8 +29,6 @@ func GramSchmidt(mat Matrix) Matrix {
 			}
 		}
 	}
-
-	Print(Mul(gsoMat, mu))
 
 	return gsoMat
 }
