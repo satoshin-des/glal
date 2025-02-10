@@ -6,8 +6,8 @@ import "math"
 func Norm(vec Vector, p int) float64 {
 	var s float64 = 0
 
-	for i := 0; i < vec.length; i++ {
-		s += vec.at[i] * vec.at[i]
+	for i := 0; i < vec.Length; i++ {
+		s += vec.At[i] * vec.At[i]
 	}
 
 	return math.Pow(s, 1.0/float64(p))

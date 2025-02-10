@@ -7,9 +7,9 @@ func Rank(mat Matrix) int {
 	elimiMat := GaussElimi(mat)
 	var rank int = 0
 
-	for i := 0; i < mat.nrows; i++ {
-		for j := 0; j < mat.ncols; j++ {
-			if math.Abs(elimiMat.at[i][j]) < epsilon {
+	for i := 0; i < mat.NumRows; i++ {
+		for j := 0; j < mat.NumCols; j++ {
+			if math.Abs(elimiMat.At[i][j]) < epsilon {
 				rank++
 				break
 			}

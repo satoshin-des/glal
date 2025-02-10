@@ -8,9 +8,9 @@ func IsSym(mat Matrix) bool {
 		return false
 	}
 
-	for i := 0; i < mat.nrows; i++ {
-		for j := i; j < mat.ncols; j++ {
-			if math.Abs(mat.at[i][j]-mat.at[j][i]) >= epsilon {
+	for i := 0; i < mat.NumRows; i++ {
+		for j := i; j < mat.NumCols; j++ {
+			if math.Abs(mat.At[i][j]-mat.At[j][i]) >= epsilon {
 				return false
 			}
 		}

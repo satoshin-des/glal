@@ -4,10 +4,10 @@ package vec
 func SetLength(n int) Vector {
 	var vec Vector
 
-	vec.at = make([]float64, n)
-	vec.length = n
+	vec.At = make([]float64, n)
+	vec.Length = n
 	for i := 0; i < n; i++ {
-		vec.at[i] = 0
+		vec.At[i] = 0
 	}
 
 	return vec

@@ -1,10 +1,10 @@
 package vec
 
 func ScalarMul(x float64, vec Vector) Vector {
-	v := SetLength(vec.length)
+	v := SetLength(vec.Length)
 
-	for i := 0; i < vec.length; i++ {
-		v.at[i] = x * vec.at[i]
+	for i := 0; i < vec.Length; i++ {
+		v.At[i] = x * vec.At[i]
 	}
 
 	return v

@@ -3,8 +3,8 @@ package vec
 import "math"
 
 func IsZero(vec Vector) bool {
-	for i := 0; i < vec.length; i++ {
-		if math.Abs(vec.at[i]) >= epsilon {
+	for i := 0; i < vec.Length; i++ {
+		if math.Abs(vec.At[i]) >= epsilon {
 			return false
 		}
 	}

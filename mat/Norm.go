@@ -6,9 +6,9 @@ import "math"
 func Norm(mat Matrix, p int) float64 {
 	var s float64 = 0
 
-	for i := 0; i < mat.nrows; i++ {
-		for j := 0; j < mat.ncols; j++ {
-			s += math.Pow(math.Abs(mat.at[i][j]), float64(p))
+	for i := 0; i < mat.NumRows; i++ {
+		for j := 0; j < mat.NumCols; j++ {
+			s += math.Pow(math.Abs(mat.At[i][j]), float64(p))
 		}
 	}
 

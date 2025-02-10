@@ -2,7 +2,7 @@ package vec
 
 // Circum returns circumcenter of x, y, and z
 func Circum(x Vector, y Vector, z Vector) Vector {
-	if x.length != y.length || y.length != z.length || z.length != x.length {
+	if x.Length != y.Length || y.Length != z.Length || z.Length != x.Length {
 		panic("circumcenter of different three vectors is not defined")
 	}
 
@@ -19,10 +19,10 @@ func Circum(x Vector, y Vector, z Vector) Vector {
 	cosY := InnerProduct(Sub(x, y), Sub(y, z)) / (xy * yz)
 	cosZ := InnerProduct(Sub(y, z), Sub(z, x)) / (yz * zx)
 
-	vec := SetLength(x.length)
+	vec := SetLength(x.Length)
 
-	for i := 0; i < vec.length; i++ {
-		vec.at[i] = (sinX*cosX*x.at[i] + sinY*cosY*y.at[i] + sinZ*cosZ*z.at[i]) / (sinX*cosX + sinY*cosY + sinZ*cosZ)
+	for i := 0; i < vec.Length; i++ {
+		vec.At[i] = (sinX*cosX*x.At[i] + sinY*cosY*y.At[i] + sinZ*cosZ*z.At[i]) / (sinX*cosX + sinY*cosY + sinZ*cosZ)
 	}
 
 	return vec

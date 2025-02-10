@@ -2,21 +2,21 @@ package mat
 
 // CoFactor returns (row, col)-cofactor of mat
 func CoFactor(mat Matrix, row int, col int) float64 {
-	tempMat := SetDims(mat.nrows-1, mat.ncols-1)
+	tempMat := SetDims(mat.NumRows-1, mat.NumCols-1)
 
-	for i := 0; i < mat.nrows; i++ {
-		for j := 0; j < mat.ncols; j++ {
+	for i := 0; i < mat.NumRows; i++ {
+		for j := 0; j < mat.NumCols; j++ {
 			if i < row {
 				if j < col {
-					tempMat.at[i][j] = mat.at[i][j]
+					tempMat.At[i][j] = mat.At[i][j]
 				} else if j > col {
-					tempMat.at[i][j-1] = mat.at[i][j]
+					tempMat.At[i][j-1] = mat.At[i][j]
 				}
 			} else if i > row {
 				if j < col {
-					tempMat.at[i-1][j] = mat.at[i][j]
+					tempMat.At[i-1][j] = mat.At[i][j]
 				} else if j > col {
-					tempMat.at[i-1][j-1] = mat.at[i][j]
+					tempMat.At[i-1][j-1] = mat.At[i][j]
 				}
 			}
 		}

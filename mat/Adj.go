@@ -6,11 +6,11 @@ func Adj(mat Matrix) Matrix {
 		panic("adjugate of non-square matrix is not defined")
 	}
 
-	tempMat := SetDims(mat.nrows, mat.ncols)
+	tempMat := SetDims(mat.NumRows, mat.NumCols)
 
-	for i := 0; i < mat.nrows; i++ {
-		for j := 0; j < mat.ncols; j++ {
-			tempMat.at[j][i] = CoFactor(mat, i, j)
+	for i := 0; i < mat.NumRows; i++ {
+		for j := 0; j < mat.NumCols; j++ {
+			tempMat.At[j][i] = CoFactor(mat, i, j)
 		}
 	}
 	return tempMat

@@ -4,7 +4,7 @@ package vec
 //
 // panic if size of three vectors x, y, and z are different
 func Gravity(x Vector, y Vector, z Vector) Vector {
-	if x.length != y.length || y.length != z.length || z.length != x.length {
+	if x.Length != y.Length || y.Length != z.Length || z.Length != x.Length {
 		panic("center of gravity of different three vectors")
 	}
 

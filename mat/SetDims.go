@@ -10,11 +10,11 @@ func SetDims(n int, m int) Matrix {
 
 	var mat Matrix
 
-	mat.nrows = n
-	mat.ncols = m
-	mat.at = make([][]float64, n)
+	mat.NumRows = n
+	mat.NumCols = m
+	mat.At = make([][]float64, n)
 	for i := 0; i < n; i++ {
-		mat.at[i] = make([]float64, m)
+		mat.At[i] = make([]float64, m)
 	}
 
 	return mat

@@ -1,7 +1,7 @@
 package vec
 
 func SetZero(vec Vector) {
-	for i := 0; i < vec.length; i++ {
-		vec.at[i] = 0
+	for i := 0; i < vec.Length; i++ {
+		vec.At[i] = 0
 	}
 }

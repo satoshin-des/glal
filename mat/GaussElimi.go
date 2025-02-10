@@ -9,15 +9,15 @@ func GaussElimi(mat Matrix) Matrix {
 	var temp float64
 
 	var min int = 0
-	if copyMat.nrows < copyMat.ncols {
-		min = copyMat.nrows
+	if copyMat.NumRows < copyMat.NumCols {
+		min = copyMat.NumRows
 	} else {
-		min = copyMat.ncols
+		min = copyMat.NumCols
 	}
 
 	for k := 0; k < min; k++ {
-		for i := k; i < copyMat.nrows; i++ {
-			if copyMat.at[i][k] != 0 {
+		for i := k; i < copyMat.NumRows; i++ {
+			if copyMat.At[i][k] != 0 {
 				index = i
 				break
 			}
@@ -29,21 +29,23 @@ func GaussElimi(mat Matrix) Matrix {
 			SwapRow(copyMat, k, index)
 		}
 
-		for i := 0; i < copyMat.nrows; i++ {
-			for j := 0; j < copyMat.ncols; j++ {
+		for i := 0; i < copyMat.NumRows; i++ {
+			for j := 0; j < copyMat.NumCols; j++ {
 				if i == k {
-					elimiMat.at[i][j] = copyMat.at[i][j]
+					elimiMat.At[i][j] = copyMat.At[i][j]
 				} else {
-					elimiMat.at[i][j] = copyMat.at[i][j] - copyMat.at[k][j]*copyMat.at[i][k]/copyMat.at[k][k]
+					elimiMat.At[i][j] = copyMat.At[i][j] - copyMat.At[k][j]*copyMat.At[i][k]/copyMat.At[k][k]
 				}
 			}
 		}
 
-		temp = elimiMat.at[k][k]
+		temp = elimiMat.At[k][k]
 
-		for i := 0; i < copyMat.ncols; i++ {
-			elimiMat.at[k][i] /= temp
+		for i := 0; i < copyMat.NumCols; i++ {
+			elimiMat.At[k][i] /= temp
 		}
+
+		copyMat = CopyMat(elimiMat)
 	}
 
 	return elimiMat

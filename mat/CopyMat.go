@@ -2,11 +2,11 @@ package mat
 
 // CopyMat returns copy of mat
 func CopyMat(mat Matrix) Matrix {
-	m := SetDims(mat.nrows, mat.ncols)
+	m := SetDims(mat.NumRows, mat.NumCols)
 
-	for i := 0; i < mat.nrows; i++ {
-		for j := 0; j < mat.ncols; j++ {
-			m.at[i][j] = mat.at[i][j]
+	for i := 0; i < mat.NumRows; i++ {
+		for j := 0; j < mat.NumCols; j++ {
+			m.At[i][j] = mat.At[i][j]
 		}
 	}
 
