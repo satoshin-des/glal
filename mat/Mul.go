@@ -1,11 +1,14 @@
 package mat
 
+import "fmt"
+
 // Mul returns product of mat1 and mat2
 //
 // panic if product of mat1 and mat2 is not defined
 func Mul(mat1 Matrix, mat2 Matrix) Matrix {
 	if mat1.NumCols != mat2.NumRows {
-		panic("products of given matrix is not defined")
+		pn := fmt.Sprintf("product of %d by %d matrix and %d by %d matrix is not defined", mat1.NumRows, mat1.NumCols, mat2.NumRows, mat2.NumCols)
+		panic(pn)
 	}
 
 	mat := SetDims(mat1.NumRows, mat2.NumCols)
