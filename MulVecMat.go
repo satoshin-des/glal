@@ -2,8 +2,10 @@ package glal
 
 import (
 	"fmt"
-	"glal/mat"
-	"glal/vec"
+
+	"github.com/satoshin-des/glal/mat"
+
+	"github.com/satoshin-des/glal/vec"
 )
 
 // MulVecMat returns v * m

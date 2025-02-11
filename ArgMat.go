@@ -1,8 +1,9 @@
 package glal
 
 import (
-	"glal/mat"
-	"glal/vec"
+	"github.com/satoshin-des/glal/mat"
+
+	"github.com/satoshin-des/glal/vec"
 )
 
 // ArgMat returns argumented matrix of m and v

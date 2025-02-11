@@ -2,8 +2,10 @@ package glal
 
 import (
 	"errors"
-	"glal/mat"
-	"glal/vec"
+
+	"github.com/satoshin-des/glal/mat"
+
+	"github.com/satoshin-des/glal/vec"
 )
 
 // Solve returns one of slotion vectors of equation m * x = v

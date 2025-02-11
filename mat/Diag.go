@@ -1,6 +1,6 @@
 package mat
 
-import "glal/vec"
+import "github.com/satoshin-des/glal/vec"
 
 // Diag returns matrix whose diagonal elements are v
 func Diag(v vec.Vector) Matrix {
