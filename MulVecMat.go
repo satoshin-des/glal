@@ -12,7 +12,7 @@ import (
 //
 // panic if v * m is not defined
 func MulVecMat(v vec.Vector, m mat.Matrix) vec.Vector {
-	if m.NumCols != v.Length {
+	if m.NumRows != v.Length {
 		pn := fmt.Sprintf("product of  %d-th vector and %d by %d-matrix is not defined", v.Length, m.NumRows, m.NumCols)
 		panic(pn)
 	}
